@@ -3,6 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="DateTest:jar" />
+      <artifact name="DateTest:jar2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,7 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5432650b-3f9d-44d1-8fc5-0293c9f2d4ea" name="Changes" comment="first">
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringToDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StringToDate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669760492759</updated>
       <workItem from="1669760494203" duration="18635000" />
-      <workItem from="1669839495564" duration="8751000" />
+      <workItem from="1669839495564" duration="9494000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1669783356835</created>
@@ -173,7 +175,42 @@
       <option name="project" value="LOCAL" />
       <updated>1669864637298</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first">
+      <created>1669864724319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669864724319</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first">
+      <created>1669864732562</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669864732562</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first">
+      <created>1669864873713</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669864873713</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first">
+      <created>1669864936501</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669864936501</updated>
+    </task>
+    <task id="LOCAL-00007" summary="first">
+      <created>1669865108094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669865108094</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -111,6 +111,9 @@ public class StringToDate {
     }
 
     private void setYear(String yearString) {
+        if (yearString.length() == 1) {
+            yearString = "0" + yearString;
+        }
         if (yearString.length() == 2) {
             String dateFirstPart = (LocalDateTime.now(clock).getYear() + "").substring(0,2); //You're not going to get me Y2.1K bug
             yearString = dateFirstPart + yearString;
