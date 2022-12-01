@@ -1,14 +1,9 @@
 # StringToDate
-### Version: 
-0.1.0
-### Date: 
-2022-12-01
-### Author: 
-Tim Broadbent
-### Maintainer: 
-Tim Broadbent <
-### License: 
-MIT
+#### Version: 0.1.0
+#### Date: 2022-12-01
+#### Author: Tim Broadbent
+#### Maintainer: Tim Broadbent 
+#### License: MIT
 ## Description: 
 Converts all common user inputs for dates into the mostly likely date object given that input.
 ## Dependencies: 
