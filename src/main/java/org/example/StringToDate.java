@@ -8,7 +8,12 @@ import java.time.temporal.TemporalAdjusters;
 
 public class StringToDate {
 
+    private boolean yearSet = false;
+    private boolean monthSet = false;
     private Clock clock;
+    private int year;
+    private int month;
+    private int day;
 
     StringToDate(){
         setClock(Clock.systemDefaultZone());
@@ -17,9 +22,7 @@ public class StringToDate {
     StringToDate(Clock clock){
         setClock(clock);
     }
-    private int year;
-    private int month;
-    private int day;
+
     public void setClock(Clock clock) {
         this.clock = clock;
         year = LocalDate.now(clock).getYear();
@@ -27,7 +30,7 @@ public class StringToDate {
         day= LocalDate.now(clock).getDayOfMonth();
     }
 
-    public LocalDate getStringFromDate(String s) {
+    public LocalDate getStringFromDate(String s) throws IllegalArgumentException, DateTimeException{
         String[] stringArray = getRegexSplit(s);
         for (int i = 0; i < stringArray.length; i++) {
             if (i == 0) {
@@ -60,22 +63,25 @@ public class StringToDate {
     private void useSecondString(String secondString) {
         if (isWords(secondString)) {
             setFromWords(secondString);
+        } else if (monthSet) {
+            setYear(secondString);
         } else {
-            month = Integer.parseInt(secondString);
+            setMonth(secondString);
         }
     }
     private void useThirdString(String thirdString) {
-        if (thirdString.length() == 2) {
-            String dateFirstPart = (LocalDateTime.now(clock).getYear() + "").substring(0,2); //You're not going to get me Y2.1K bug
-            thirdString = dateFirstPart + thirdString;
+        if (yearSet){
+            setDay(thirdString);
+        } else {
+
+              setYear(thirdString);}
         }
-        setYear(thirdString);
-    }
+
 
     private void setFromWords(String wordsString) {
         int monthFromString = getMonthFromMonthWord(wordsString);
         if (isMonthValid(monthFromString)) {
-            month = monthFromString;
+            setMonth(monthFromString+"");
         } else {
             setDateFromDayOfWeekWord(wordsString);
         }
@@ -89,9 +95,9 @@ public class StringToDate {
         LocalDate date = LocalDate.now(clock);
         DayOfWeek dayOfTheWeek = DayOfWeek.valueOf(dayOfTheWeekWord.toUpperCase());
         date = date.with(TemporalAdjusters.nextOrSame(dayOfTheWeek));
-        day = date.getDayOfMonth();
-        year = date.getYear();
-        month = date.getMonthValue();
+        setDay(date.getDayOfMonth() + "");
+        setYear(date.getYear() + "");
+        setMonth(date.getMonthValue() + "");
     }
 
 
@@ -99,12 +105,25 @@ public class StringToDate {
         day = Integer.parseInt(dayString);
     }
 
+    private void setMonth(String monthString){
+        month = Integer.parseInt(monthString);
+        monthSet = true;
+    }
+
     private void setYear(String yearString) {
+        if (yearString.length() == 2) {
+            String dateFirstPart = (LocalDateTime.now(clock).getYear() + "").substring(0,2); //You're not going to get me Y2.1K bug
+            yearString = dateFirstPart + yearString;
+            if (Integer.parseInt(yearString) > LocalDateTime.now(clock).getYear() + 50) {
+                yearString = (Integer.parseInt(yearString) - 100) + "";
+            }
+        }
         year = Integer.parseInt(yearString);
+        yearSet = true;
     }
 
     private boolean isYear(String dayString) {
-        return dayString.length() == 4;
+        return dayString.length() == 4 | Integer.parseInt(dayString) > 31;
     }
 
     private boolean isWords(String dayString) {

@@ -181,6 +181,27 @@ class StringToDateTest {
         assertEquals(1, date.getMonthValue());
     }
 
-    //TODO create test that checks for year of 99 potentially inherit into a subclass for backwards looking dates for dob etc.
+    @Test
+    void Year4IntMonthStringDayInt_ReturnsDate(){
+        LocalDate date = new StringToDate().getStringFromDate("2020 June 8");
+        assertEquals(2020, date.getYear());
+        assertEquals(8, date.getDayOfMonth());
+        assertEquals(6, date.getMonthValue());
+    }
 
+    @Test
+    void month3stringYear4int_returnsDate(){
+        LocalDate date = new StringToDate().getStringFromDate("Jan 2020");
+        assertEquals(2020, date.getYear());
+        assertEquals(LocalDate.now().getDayOfMonth(), date.getDayOfMonth());
+        assertEquals(1, date.getMonthValue());
+    }
+
+   @Test
+    void year2Int_returnsDate(){
+        LocalDate date = new StringToDate().getStringFromDate("99");
+        assertEquals(1999, date.getYear());
+        assertEquals(LocalDate.now().getDayOfMonth(), date.getDayOfMonth());
+        assertEquals(LocalDate.now().getMonthValue(), date.getMonthValue());
+    }
 }
