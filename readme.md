@@ -10,9 +10,9 @@ Converts all common user inputs for dates into the mostly likely date object giv
 Java 19.0.1 JVM
 
 ## Instructions: 
-Download the DateTest.jar file from out/artifacts/DateTest_jar/ and run it with the command java -jar DateTest.jar
+Download the `DateTest.jar` file from `out/artifacts/` and run it in a terminal with the command `java -jar DateTest.jar`
 The program will ask you to enter a date, and then will print out the date object it thinks you meant.
-If you want to exit the program, enter "exit" as the date.
+If you want to exit the program, enter `exit` as the date.
 If you want to see the code, download the source code and open it in your favorite IDE.
 
 ## Troubleshooting:
